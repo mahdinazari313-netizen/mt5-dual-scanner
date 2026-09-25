@@ -86,28 +86,27 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_dual_window:
-                showDualWindowDialog();
-                return true;
-            case R.id.action_repeat_interval:
-                showRepeatIntervalDialog();
-                return true;
-            case R.id.action_price_difference:
-                showPriceDifferenceDialog();
-                return true;
-            case R.id.action_permissions:
-                showPermissionsDialog();
-                return true;
-            case R.id.action_toggle_monitoring:
-                toggleMonitoring();
-                return true;
-            case R.id.action_about:
-                showAboutDialog();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+        if (id == R.id.action_dual_window) {
+            showDualWindowDialog();
+            return true;
+        } else if (id == R.id.action_repeat_interval) {
+            showRepeatIntervalDialog();
+            return true;
+        } else if (id == R.id.action_price_difference) {
+            showPriceDifferenceDialog();
+            return true;
+        } else if (id == R.id.action_permissions) {
+            showPermissionsDialog();
+            return true;
+        } else if (id == R.id.action_toggle_monitoring) {
+            toggleMonitoring();
+            return true;
+        } else if (id == R.id.action_about) {
+            showAboutDialog();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     private void showDualWindowDialog() {
